@@ -65,8 +65,14 @@
                   [NSDictionary dictionaryWithObjectsAndKeys:
                    [NSArray arrayWithObjects:@"three", @"four", nil], @"array", nil],
                   nil], @"nestedArray",
-
+                 @"male", @"gender",
                  nil];
+    
+    NSDictionary *genderMap = [NSDictionary dictionaryWithObjectsAndKeys:
+        @"male", [NSNumber numberWithInteger:MALE], 
+        @"female",[NSNumber numberWithInteger:FEMALE],
+                               nil
+    ];
     
     self.mapping = [NSDictionary dictionaryWithObjectsAndKeys:
                     @"name", @"p_name",
@@ -89,6 +95,7 @@
                     [JPNestedArrayTest mappingWithKey:@"nestedArray"
                                        mapping:[NSDictionary dictionaryWithObjectsAndKeys:
                                                 @"array", @"array", nil]], @"nestedArray",
+                    [NSObject mappingWithKey:@"gender" enumMap:genderMap], @"gender",
                     nil];
 
     self.object = [JTUserTest objectFromJSONObject:json mapping:mapping];
@@ -183,6 +190,11 @@
     
     NSArray *expectedArray2 = [NSArray arrayWithObjects:@"three", @"four", nil];
     STAssertEqualObjects(api2.array, expectedArray2, nil, nil);
+}
+
+- (void)testGenderEnum {
+   STAssertTrue(self.object.gender == MALE, @"Should be male", nil);
+    STAssertTrue(self.object.gender != FEMALE, @"Shouldn be male", nil);  
 }
 
 @end

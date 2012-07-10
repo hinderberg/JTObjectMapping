@@ -30,6 +30,7 @@
 		1A7E720B141605B300AE157A /* JTMappings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7E720A141605B300AE157A /* JTMappings.m */; };
 		1A7E720E141613C900AE157A /* JTUserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7E720D141613C800AE157A /* JTUserTest.m */; };
 		1AF05842141D1C9A00CD7E50 /* JTObjectMappingArrayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AF05841141D1C9A00CD7E50 /* JTObjectMappingArrayTest.m */; };
+		60090E6D15ACBB2B00315566 /* JTEnumMappings.m in Sources */ = {isa = PBXBuildFile; fileRef = 60090E6C15ACBB2B00315566 /* JTEnumMappings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A23E1D51469B35C002BBB85 /* JPNestedArrayTest.h */ = {isa = PBXFileReference; fileEncoding = 4; path = JPNestedArrayTest.h; sourceTree = "<group>"; };
+		1A23E1D51469B35C002BBB85 /* JPNestedArrayTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPNestedArrayTest.h; sourceTree = "<group>"; };
 		1A23E1D61469B35C002BBB85 /* JPNestedArrayTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPNestedArrayTest.m; sourceTree = "<group>"; };
 		1A5F56C714168CC3007145BC /* JTDateMappings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTDateMappings.h; sourceTree = "<group>"; };
 		1A5F56C814168CC3007145BC /* JTDateMappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTDateMappings.m; sourceTree = "<group>"; };
@@ -77,6 +78,8 @@
 		1A7E720D141613C800AE157A /* JTUserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTUserTest.m; sourceTree = "<group>"; };
 		1AF05840141D1C9A00CD7E50 /* JTObjectMappingArrayTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTObjectMappingArrayTest.h; sourceTree = "<group>"; };
 		1AF05841141D1C9A00CD7E50 /* JTObjectMappingArrayTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTObjectMappingArrayTest.m; sourceTree = "<group>"; };
+		60090E6B15ACBB2B00315566 /* JTEnumMappings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTEnumMappings.h; sourceTree = "<group>"; };
+		60090E6C15ACBB2B00315566 /* JTEnumMappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTEnumMappings.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +199,8 @@
 				1A7E720A141605B300AE157A /* JTMappings.m */,
 				1A5F56C714168CC3007145BC /* JTDateMappings.h */,
 				1A5F56C814168CC3007145BC /* JTDateMappings.m */,
+				60090E6B15ACBB2B00315566 /* JTEnumMappings.h */,
+				60090E6C15ACBB2B00315566 /* JTEnumMappings.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 				1A7E720E141613C900AE157A /* JTUserTest.m in Sources */,
 				1A5F56C914168CC3007145BC /* JTDateMappings.m in Sources */,
 				1A23E1D71469B35D002BBB85 /* JPNestedArrayTest.m in Sources */,
+				60090E6D15ACBB2B00315566 /* JTEnumMappings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

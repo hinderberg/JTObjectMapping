@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "JTMappings.h"
 #import "JTDateMappings.h"
+#import "JTEnumMappings.h"
 
 @protocol JTValidJSONResponse <NSObject>
 @end
@@ -25,6 +26,7 @@
 
 - (void)setValueFromDictionary:(NSDictionary *)dict mapping:(NSDictionary *)mapping;
 + (id <JTMappings>)mappingWithKey:(NSString *)key mapping:(NSDictionary *)mapping;
++ (id <JTEnumMappings>)mappingWithKey:(NSString *)key enumMap:(NSDictionary *)enumMap;
 + (id)objectFromJSONObject:(id <JTValidJSONResponse>)object mapping:(NSDictionary *)mapping;
 
 @end

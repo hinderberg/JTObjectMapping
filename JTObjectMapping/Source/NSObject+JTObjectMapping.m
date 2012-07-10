@@ -10,6 +10,7 @@
 #import "JTMappings.h"
 #import "JTDateMappings.h"
 #import <objc/runtime.h>
+#import "JTEnumMappings.h"
 
 @implementation NSObject (JTObjectMapping)
 
@@ -32,6 +33,16 @@
                     [self setValue:nil forKey:mapsToValue];
                 } else {
                     [self setValue:obj forKey:mapsToValue];
+                }
+            } else if ([mapsToValue conformsToProtocol:@protocol(JTEnumMappings)] && [(NSObject *)obj isKindOfClass:[NSString class]]) {
+                id <JTEnumMappings> mappings = (id <JTEnumMappings>)mapsToValue;
+                NSArray *keys = [mappings.enumMap allKeysForObject:obj];
+                
+                if ([keys count] != 0) {
+                    id firstKey = [keys objectAtIndex:0];
+                    [self setValue:firstKey forKey:mappings.key];
+                } else {
+                    NSAssert2(NO, @"[mapsToValue class]: %@, [obj class]: %@ is not handled", NSStringFromClass([mapsToValue class]), NSStringFromClass([obj class]));
                 }
             } else if ([mapsToValue conformsToProtocol:@protocol(JTMappings)] && [(NSObject *)obj isKindOfClass:[NSDictionary class]]) {
                 id <JTMappings> mappings = (id <JTMappings>)mapsToValue;
@@ -70,7 +81,7 @@
     // Likely to be keyPath, enumerate and try add to our object
     // Could cause unexpected result if obj [dict valueForKeyPath:key] is not NSString
 #if ! JTOBJECTMAPPING_DISABLE_KEYPATH_SUPPORT
-    [notMapped enumerateKeysAndObjectsUsingBlock:^(id key, NSString *obj, BOOL *stop) {
+    [notMapped enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         id value = [dict valueForKeyPath:key];
         [self setValue:value forKey:obj];
     }];
@@ -81,6 +92,10 @@
 
 + (id <JTMappings>)mappingWithKey:(NSString *)key mapping:(NSDictionary *)mapping {
     return [JTMappings mappingWithKey:key targetClass:[self class] mapping:mapping];
+}
+
++ (id <JTEnumMappings>)mappingWithKey:(NSString *)key enumMap:(NSDictionary *)enumMap {
+    return [JTEnumMappings mappingWithKey:key targetClass:[self class] enumMap:enumMap];
 }
 
 + (id)objectFromJSONObject:(id<JTValidJSONResponse>)object mapping:(NSDictionary *)mapping {

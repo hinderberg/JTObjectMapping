@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+    FEMALE,
+    MALE
+} GENDER;
+
 @class JTSocialNetworkTest;
 
 @interface JTUserTest : NSObject
@@ -26,5 +31,7 @@
 //@property (nonatomic, retain) JTSocialNetworkTest *autoSocialNetwork;
 
 @property (nonatomic, retain) JTSocialNetworkTest *socialNetwork;
+
+@property(nonatomic) GENDER gender;
 
 @end

@@ -16,5 +16,6 @@
 //@synthesize autoSocialNetwork;
 @synthesize socialNetwork;
 @synthesize nestedArray;
+@synthesize gender;
 
 @end
