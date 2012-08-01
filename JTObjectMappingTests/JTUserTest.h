@@ -20,10 +20,13 @@ typedef enum {
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSNumber *age;
-@property (nonatomic, copy) NSString *null;
 @property (nonatomic, retain) NSDate *createDate;
+@property (nonatomic, retain) NSDate *eighteenthBirthday;
 @property (nonatomic, retain) NSArray *childs;
 @property (nonatomic, retain) NSArray *users;
+@property (nonatomic, retain) NSSet *favoriteColors;
+
+@property (nonatomic, copy) NSString *hashedString;
 
 @property (nonatomic, copy) NSString *autoString;
 @property (nonatomic, retain) NSArray *autoArray;
@@ -33,5 +36,11 @@ typedef enum {
 @property (nonatomic, retain) JTSocialNetworkTest *socialNetwork;
 
 @property(nonatomic) GENDER gender;
+@property (nonatomic, copy) NSString *null;
+@property (nonatomic, copy) NSNumber *nullNumber;
+@property (nonatomic, copy) NSArray *nullArray;
+@property (nonatomic, copy) NSSet   *nullSet;
+@property (nonatomic, retain) NSDate *nullDate;
+@property (nonatomic, retain) JTSocialNetworkTest *nullChild;
 
 @end

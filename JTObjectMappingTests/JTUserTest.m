@@ -9,13 +9,20 @@
 #import "JTUserTest.h"
 
 @implementation JTUserTest
-@synthesize name, title, age, null;
+@synthesize name, title, age;
 @synthesize createDate;
 @synthesize childs, users;
 @synthesize autoString, autoArray;
 //@synthesize autoSocialNetwork;
 @synthesize socialNetwork;
 @synthesize nestedArray;
+
 @synthesize gender;
+
+@synthesize eighteenthBirthday;
+@synthesize favoriteColors;
+@synthesize hashedString;
+
+@synthesize null, nullDate, nullArray, nullSet, nullChild, nullNumber;
 
 @end
